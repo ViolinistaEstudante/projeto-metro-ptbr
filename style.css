@@ -1,0 +1,248 @@
+body {
+    font-family: "Exo 2";
+    background-color: rgb(227, 233, 228);
+}
+
+.cabeçalho {
+    background-color: #253c53;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 16px 40px;
+}
+
+.cabeçalho-imagem {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+.cabeçalho-lista {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    list-style: none;
+    gap: 15px;
+    justify-content: flex-end;
+}
+
+.cabeçalho-lista li {
+    margin: 0 16px;
+    font-size: 22px;
+    border: 3px solid white;
+    padding: 2px;
+    border-top-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+    font-family: "Exo 2";
+    padding: 8px 40px;
+    transition: all .2s ease-out;
+}
+
+.cabeçalho-lista li:hover {
+    transform: scale(1.1);
+}
+
+.cabeçalho-lista a{
+    color: white !important;
+    text-decoration: none;
+}
+
+.apresentacao {
+    background-color: #1b2c45;
+    color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 40px;
+    padding-bottom: 40px;
+    column-gap: 60px;
+    border-radius: 20px; /* Adiciona bordas arredondadas */
+    margin: 40px auto; /* Centraliza a seção e cria um espaço nas laterais */
+    max-width: 1200px; /* Define um tamanho máximo para a seção */
+    width: 90%; /* Faz com que a seção ocupe 90% da largura da tela */
+    border-left: #253c53 solid 25px;
+}
+
+.apresentacao h1 {
+    font-family: "Exo 2";
+    color: white;
+}
+
+.apresentacao p {
+    font-family: "Exo 2";
+    color: white;
+}
+
+.vídeo {
+    border-radius: 25px;
+    border: 2px solid white;
+}
+
+.areadeatuacao {
+    background-color: #1b2c45;
+    color: white;
+    display: flex; 
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 40px;
+    border-radius: 20px; 
+    margin: 40px auto;
+    max-width: 1200px;
+    width: 90%;
+    border-left: #253c53 solid 25px;
+}
+
+.título-areadeatuacao {
+    font-family: "Exo 2";
+    margin-bottom: 20px;
+}
+
+.container-cards {
+    display: flex;
+    color: black;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    max-width: 1000px;
+}
+
+.cards {
+    background-color: #fff;
+    width: 210px;
+    height: 240px;
+    overflow: hidden;
+    border-radius: 12px;
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.3);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: transform 0.3s ease-in-out;
+}
+
+.cards:hover {
+    transform: scale(1.05);
+}
+
+.imagem-card {
+    width: 100%;
+    height: 130px;
+    overflow: hidden;
+}
+
+.imagem-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.textos-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    row-gap: 10px;
+    height: 111px;
+    padding: 0px 10px;
+}
+
+.equipe {
+    background-color: #1b2c45;
+    color: black;
+    display: flex; 
+    align-items: center;
+    padding: 40px;
+    padding-bottom: 40px;
+    column-gap: 60px;
+    border-radius: 20px; /* Adiciona bordas arredondadas */
+    margin: 40px auto; /* Centraliza a seção e cria um espaço nas laterais */
+    max-width: 1200px; /* Define um tamanho máximo para a seção */
+    width: 90%; /* Faz com que a seção ocupe 90% da largura da tela */
+    border-left: #253c53 solid 25px;
+}
+
+.titulo-equipe {
+    color: white;
+    font-family: "Exo 2";
+}
+
+.apresentacao-equipe {
+    background-color: #fff;
+    width: 210px;
+    height: 210px;
+    overflow: hidden;
+    border-radius: 12px;
+    box-shadow: 0px 4px 12px rgb(0, 0, 0, 0.3);
+    display: flex; /* Habilitar flexbox para alinhamento */
+    justify-content: center; /* Centralizar horizontalmente */
+    align-items: center; /* Centralizar verticalmente */
+    flex-direction: column; /* Empilhar elementos verticalmente, se necessário */
+}
+
+.imagem-equipe {
+    width: 130px; /* Largura e altura iguais para formar um círculo */
+    height: 130px;
+    border-radius: 50%; /* Transformar em círculo */
+    overflow: hidden; /* Garantir que a imagem não ultrapasse os limites do círculo */
+    display: flex; /* Garantir que a imagem esteja centralizada no círculo */
+    justify-content: center;
+    align-items: center;
+}
+
+.imagem-equipe img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ajustar a imagem para cobrir o círculo */
+}
+
+.apresentacao img {
+    width: 150px;
+}
+
+.cabeçalho-lista2 {
+    display: flex;
+    justify-content: center;
+    padding: 0;
+    margin: 16px 0;
+}
+
+.cabeçalho-lista2 li {
+    margin: 0 16px;
+    font-size: 22px;
+    border: 3px solid white;
+    padding: 8px 40px;
+    font-family: "Exo 2", sans-serif;
+    border-bottom-right-radius: 20px;
+    border-top-left-radius: 20px;
+    list-style-type: none;
+    transition: all 0.2s ease-out;
+    text-align: center;
+}
+
+.cabeçalho-lista2 a {
+    color: white !important;
+    text-decoration: none;
+}
+
+.cabeçalho-lista2 li:hover {
+    transform: scale(1.1);
+    cursor: pointer;
+}
+
+footer {
+    width: 100%;
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #1b2c45;
+    color: #ffffff;
+    box-sizing: border-box;
+}
+
+.bandeiras {
+    display: flex;
+    justify-content: space-between;
+}
