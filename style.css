@@ -246,3 +246,39 @@ footer {
     display: flex;
     justify-content: space-between;
 }
+
+.galeria {
+    background-color: #1b2c45;
+    color: white;
+    text-align: center;
+    padding: 40px;
+    border-radius: 20px;
+    margin: 40px auto;
+    max-width: 1200px;
+    width: 90%;
+    border-left: #253c53 solid 25px;
+}
+
+.titulo-galeria {
+    margin-bottom: 20px;
+}
+
+.container-galeria {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 15px;
+    justify-content: center;
+}
+
+.container-galeria img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 10px;
+    transition: transform 0.3s ease-in-out;
+}
+
+.container-galeria img:hover {
+    transform: scale(1.05);
+}
+
