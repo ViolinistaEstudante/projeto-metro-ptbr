@@ -10,6 +10,9 @@ body {
     justify-content: space-between;
     align-items: center;
     padding: 16px 40px;
+    position: sticky;
+    top: 0;
+    z-index: 100;
 }
 
 .cabeçalho-imagem {
@@ -44,7 +47,7 @@ body {
     transform: scale(1.1);
 }
 
-.cabeçalho-lista a{
+.cabeçalho-lista a {
     color: white !important;
     text-decoration: none;
 }
@@ -240,6 +243,9 @@ footer {
     background: #1b2c45;
     color: #ffffff;
     box-sizing: border-box;
+    position: relative;
+    bottom: 0;
+    z-index: 100;
 }
 
 .bandeiras {
@@ -282,3 +288,121 @@ footer {
     transform: scale(1.05);
 }
 
+/* Estilos da Animação de Carregamento */
+.loading-screen {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #1b2c45;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    opacity: 1;
+    transition: opacity 1s ease-out;
+}
+
+.loading-screen.hidden {
+    opacity: 0;
+    pointer-events: none; /* Impede interação com a tela de carregamento */
+}
+
+.trem-img {
+    width: 400px;
+    height: auto;
+    position: relative;
+    right: -100%; /* Começa fora da tela à direita */
+    animation: moveTrem 3s forwards, fadeOut 1s 3s forwards;
+}
+
+@keyframes moveTrem {
+    0% {
+        right: -100%;
+    }
+    100% {
+        right: 0;
+    }
+}
+
+@keyframes fadeOut {
+    0% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
+}
+
+/* Esconder o conteúdo principal inicialmente com opacidade e visibilidade */
+body:not(.loaded) main,
+body:not(.loaded) header,
+body:not(.loaded) footer {
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 1s ease-out, visibility 1s ease-out;
+}
+
+/* Mostrar o conteúdo principal após o carregamento */
+body.loaded main,
+body.loaded header,
+body.loaded footer {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* Estilos do Modal */
+.modal-galeria {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.9);
+    z-index: 1000;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-galeria.mostrar {
+    display: flex;
+}
+
+.modal-conteudo {
+    max-width: 90%;
+    max-height: 90%;
+    border-radius: 10px;
+}
+
+.fechar-modal {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    color: white;
+    font-size: 40px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.fechar-modal:hover {
+    color: #ccc;
+}
+
+.botao-voltar {
+    position: absolute;
+    bottom: 20px;
+    background-color: #253c53;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    font-family: "Exo 2";
+}
+
+.botao-voltar:hover {
+    background-color: #1b2c45;
+}

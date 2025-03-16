@@ -15,6 +15,10 @@
 </head>
 
 <body>
+    <!--- Animação de Carregamento --->
+    <div class="loading-screen">
+        <img src="img/logo-metro.png" alt="Trem" class="trem-img">
+    </div>
 
     <!--- Cabeçalho --->
     <header class="cabeçalho">
@@ -23,6 +27,7 @@
             <a href="https://projetometro-ptbr.netlify.app/"><img src="img/brasil.png" alt="brasil"></a>
             <a href="https://projetometro-en.netlify.app/"><img src="img/estadosunidos.png" alt="estadosunidos"></a>
             <a href="https://projetometro-fr.netlify.app/"><img src="img/frança.png" alt="frança"></a>
+            <a href="https://projetometro-de.netlify.app/"><img src="img/alemanha.png" alt="alemanha"></a>
         </div>
         <nav>
             <ul class="cabeçalho-lista">
@@ -54,7 +59,7 @@
             <div class="container-cards">
                 <article class="cards">
                     <div class="imagem-card">
-                        <img src="img/música.jpg" alt="Foto de partituras queimadas">
+                        <img src="img/música.png" alt="Foto de partituras queimadas">
                     </div>
                     <div class="textos-card">
                         <h3>Música</h3>
@@ -63,7 +68,7 @@
 
                 <article class="cards">
                     <div class="imagem-card">
-                        <img src="img/lutheria.jpg" alt="Foto de violinos um ao lado do outro">
+                        <img src="img/lutheria.png" alt="Foto de violinos um ao lado do outro">
                     </div>
                     <div class="textos-card">
                         <h3>Lutheria</h3>
@@ -72,7 +77,7 @@
 
                 <article class="cards">
                     <div class="imagem-card">
-                        <img src="img/escultura.jpg" alt="Banco esculpido com cabeças de cavalo">
+                        <img src="img/escultura em madeira.png" alt="Banco esculpido com cabeças de cavalo">
                     </div>
                     <div class="textos-card">
                         <h3>Escultura em Madeira</h3>
@@ -81,7 +86,7 @@
 
                 <article class="cards">
                     <div class="imagem-card">
-                        <img src="img/cerâmica.jpg" alt="Peça de cerâmica artística">
+                        <img src="img/escultura em cerâmica.png" alt="Peça de cerâmica artística">
                     </div>
                     <div class="textos-card">
                         <h3>Escultura em Cerâmica</h3>
@@ -90,7 +95,7 @@
 
                 <article class="cards">
                     <div class="imagem-card">
-                        <img src="img/fotografia.jpg" alt="Arte digital abstrata">
+                        <img src="img/fotografia.png" alt="Arte digital abstrata">
                     </div>
                     <div class="textos-card">
                         <h3>Fotografia</h3>
@@ -108,7 +113,7 @@
 
                 <article class="cards">
                     <div class="imagem-card">
-                        <img src="img/escrita.webp" alt="Caderno com anotações à mão">
+                        <img src="img/escrita.png" alt="Caderno com anotações à mão">
                     </div>
                     <div class="textos-card">
                         <h3>Escrita</h3>
@@ -123,11 +128,17 @@
             <p>Confira alguns momentos especiais do nosso projeto.</p>
         </div>
             <div class="container-galeria">
-                <img src="img/violino-imagem.jpg" alt="Violino 1">
-                <img src="img/violino-imagem.jpg" alt="Violino 2">
-                <img src="img/violino-imagem.jpg" alt="Violino 3">
-                <img src="img/violino-imagem.jpg" alt="Violino 4">
-                <img src="img/violino-imagem.jpg" alt="Violino 5">
+                <div class="imagem-galeria"><img src="img/violino-imagem.jpg" alt="Violino 1"></div>
+                <div class="imagem-galeria"><img src="img/violino-imagem.jpg" alt="Violino 2"></div>
+                <div class="imagem-galeria"><img src="img/violino-imagem.jpg" alt="Violino 3"></div>
+                <div class="imagem-galeria"><img src="img/violino-imagem.jpg" alt="Violino 4"></div>
+                <div class="imagem-galeria"><img src="img/violino-imagem.jpg" alt="Violino 5"></div>
+            </div>
+            <!-- Modal para imagem expandida -->
+            <div class="modal-galeria">
+                <span class="fechar-modal">&times;</span>
+                <img class="modal-conteudo" src="" alt="Imagem expandida">
+                <button class="botao-voltar">Fechar</button>
             </div>
         </section>
 
