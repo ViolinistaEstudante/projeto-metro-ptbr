@@ -52,6 +52,61 @@ body {
     text-decoration: none;
 }
 
+.custom-language-selector {
+    position: relative;
+    display: inline-block;
+  }
+  
+  .selector-button {
+    display: flex;
+    align-items: center;
+    padding: 8px 12px;
+    background: white;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  .selector-button img {
+    width: 20px;
+    margin-right: 8px;
+  }
+  
+  .language-options {
+    display: none;
+    position: absolute;
+    background: white;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    width: 100%;
+    list-style: none;
+    padding: 0;
+    margin: 5px 0 0 0;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    z-index: 1000;
+  }
+  
+  .language-options li a {
+    display: flex;
+    align-items: center;
+    padding: 8px 12px;
+    text-decoration: none;
+    color: #333;
+  }
+  
+  .language-options li a:hover {
+    background: #f5f5f5;
+  }
+  
+  .language-options li a img {
+    width: 20px;
+    margin-right: 8px;
+  }
+  
+  .language-options.show {
+    display: block;
+  }
+
 .apresentacao {
     background-color: #1b2c45;
     color: black;
@@ -151,24 +206,40 @@ body {
     padding: 0px 10px;
 }
 
-.equipe {
+.equipe-container {
     background-color: #1b2c45;
     color: black;
-    display: flex; 
-    align-items: center;
     padding: 40px;
-    padding-bottom: 40px;
-    column-gap: 60px;
-    border-radius: 20px; /* Adiciona bordas arredondadas */
-    margin: 40px auto; /* Centraliza a seção e cria um espaço nas laterais */
-    max-width: 1200px; /* Define um tamanho máximo para a seção */
-    width: 90%; /* Faz com que a seção ocupe 90% da largura da tela */
+    border-radius: 20px;
+    margin: 40px auto;
+    max-width: 1200px;
+    width: 90%;
     border-left: #253c53 solid 25px;
 }
 
 .titulo-equipe {
     color: white;
     font-family: "Exo 2";
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+.equipe-scroll-wrapper {
+    width: 100%;
+    overflow-x: auto;
+    padding-bottom: 20px;
+    scrollbar-width: none; /* Para Firefox */
+}
+
+.equipe-scroll-wrapper::-webkit-scrollbar {
+    display: none; /* Para Chrome, Safari e Opera */
+}
+
+.equipe {
+    display: flex;
+    gap: 60px;
+    width: max-content; /* Faz o container se expandir conforme o conteúdo */
+    padding-bottom: 10px; /* Espaço para o scroll não cobrir o conteúdo */
 }
 
 .apresentacao-equipe {
@@ -178,26 +249,70 @@ body {
     overflow: hidden;
     border-radius: 12px;
     box-shadow: 0px 4px 12px rgb(0, 0, 0, 0.3);
-    display: flex; /* Habilitar flexbox para alinhamento */
-    justify-content: center; /* Centralizar horizontalmente */
-    align-items: center; /* Centralizar verticalmente */
-    flex-direction: column; /* Empilhar elementos verticalmente, se necessário */
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Centraliza verticalmente todo o conteúdo */
+    align-items: center; /* Centraliza horizontalmente todo o conteúdo */
+    padding: 15px; /* Adiciona um pouco de espaço interno */
+    flex-shrink: 0;
+    text-align: center; /* Centraliza o texto */
+}
+
+.textos-equipe {
+    margin-top: 15px; /* Espaço entre a imagem e o texto */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%; /* Ocupa toda a largura disponível */
+}
+
+.textos-equipe h3 {
+    margin: 5px 0;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.textos-equipe h4 {
+    margin: 5px 0;
+    font-size: 14px;
+    color: #555;
 }
 
 .imagem-equipe {
-    width: 130px; /* Largura e altura iguais para formar um círculo */
+    width: 130px;
     height: 130px;
-    border-radius: 50%; /* Transformar em círculo */
-    overflow: hidden; /* Garantir que a imagem não ultrapasse os limites do círculo */
-    display: flex; /* Garantir que a imagem esteja centralizada no círculo */
+    border-radius: 50%;
+    overflow: hidden;
+    display: flex;
     justify-content: center;
     align-items: center;
+    border: 4px solid #1b2c45;
 }
 
 .imagem-equipe img {
     width: 100%;
     height: 100%;
-    object-fit: cover; /* Ajustar a imagem para cobrir o círculo */
+    object-fit: cover;
+}
+
+.scroll-indicator {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    margin-top: 20px;
+}
+
+.scroll-dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.4);
+    cursor: pointer;
+}
+
+.scroll-dot.active {
+    background-color: white;
 }
 
 .apresentacao img {
@@ -405,4 +520,36 @@ body.loaded footer {
 
 .botao-voltar:hover {
     background-color: #1b2c45;
+}
+
+/* Estilos do Footer Moderno */
+.site-footer {
+    background: #253c53;
+    color: white;
+    padding: 20px 0;
+    text-align: center;
+    font-family: "Exo 2";
+    box-shadow: 0 -5px 15px rgba(0,0,0,0.1);
+}
+.footer-content {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+.copyright {
+    margin-bottom: 15px;
+    font-size: 14px;
+}
+.social-links {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+.social-icon {
+    color: white;
+    font-size: 24px;
+    transition: all 0.3s ease;
+}
+.social-icon:hover {
+    transform: translateY(-3px);
+    opacity: 0.8;
 }
